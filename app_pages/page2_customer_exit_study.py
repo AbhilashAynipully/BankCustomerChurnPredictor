@@ -53,7 +53,7 @@ def page2_customer_exit_study_body():
     )
 
     # Exploratory Data Analysis (EDA) of most important variables
-    df_eda = df.filter(vars_to_study + ['Exited'])
+    df_eda = df.filter(imp_vars + ['Exited'])
 
     # Individual plots per variable
     if st.checkbox("Exit Levels per Variable"):
