@@ -29,14 +29,23 @@ def page5_exit_ml_body():
     st.write("### ML Pipeline: Predict Customer Exit")
     # display pipeline summary
     st.info(
-        f"* The pipeline was aimed at producing atleast 0.70 Recall on 'Will Exit' class, "
-        f"as we are interested in identifying customers who would exit. \n"
-        f"* The pipeline performance on train and test set is 0.83 and 0.71, respectively."
+        f"The pipeline was aimed at producing atleast **0.70 Recall on 'Will Exit' class**, "
+        f"as we are interested in identifying customers who would exit. Also "
+        f"the pipeline was expected to deliver **0.70 Precision on 'No Exit' class**. \n\n"
+        f"* The pipeline's **Recall performance** on 'Will Exit' class for "
+        f"**train and test set is 0.83 and 0.71**, respectively. \n\n"
+        f"* The pipeline's **Precision performance** on 'No Exit' class for "
+        f"**train and test set is 0.80 and 0.89**, respectively. \n\n "
+    )
+    st.warning(
+        f"The model was not refitted using the important features identified as the **Recall performance "
+        f"was 0.69** post refitting which **didn't meet the business requirement of 0.70**."
     )
 
     # display pipelines
     st.write("---")
     st.write("#### There are 2 ML Pipelines arranged in series.")
+    st.write("\n\n")
 
     st.write(" * The first is responsible for data cleaning and feature engineering.")
     st.write(exit_preprocessing)
@@ -46,14 +55,19 @@ def page5_exit_ml_body():
 
     # displayfeature importance plot
     st.write("---")
-    st.write("* The important features identified")
-    st.write(X_train.columns.to_list())
+    st.write("#### The important features identified")
+    st.write("\n\n")
+    st.write("1. Age \n\n" 
+             "2. IsActiveMember \n\n "
+             "3. HasCrCard "
+    )
     st.image(exit_feat_importance)
-
+    st.write("\n\n")
+    st.write("Note : The model was not refitted using these features as the performance was slighlty low.")
 
     # display performance on train and test set
     st.write("---")
-    st.write("### Pipeline Performance")
+    st.write("## Pipeline Performance")
     clf_performance(X_train=X_train, y_train=y_train,
                     X_test=X_test, y_test=y_test,
                     pipeline=exit_model,

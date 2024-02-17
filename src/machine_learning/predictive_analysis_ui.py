@@ -44,12 +44,12 @@ def predict_tenure(X_live, tenure_features, tenure_model, tenure_labels_map):
     if tenure_prediction == 0:
         statement = (
             f"* We also expect that there is a {proba.round(2)}% probability that this customer"
-            f"will exit withinin a tenure of **{tenure_levels} year**. "
+            f"will exit withinin a period of **{tenure_levels} year**. "
         )
     else:
         statement = (
-            f"* We also expect that the customer would exit within a tenure of **{tenure_levels} years**, "
-            f"**Kindly note that the recall and precision levels for {tenure_levels} is not "
+            f"* We also expect that the customer would exit between **{tenure_levels} years**, "
+            f"**Kindly note that the recall and precision levels for {tenure_levels} years is not "
             f"strong.** "
         )
 

@@ -17,11 +17,11 @@ def page2_customer_exit_study_body():
     df = load_bank_data()
 
     # important variable to study as per ExitedCustomerDataAnalysis notebook
-    imp_vars = ['Balance','CreditScore','EstimatedSalary','Gender','Geography','NumOfProducts']
+    imp_vars = ['Age','Balance','CreditScore','EstimatedSalary','Gender','Geography','NumOfProducts']
 
     st.write("### Customer Exit Study")
     st.info(
-        f"* The bank is interested in identyfying from the available data"
+        f"* The bank is interested in identifying from the available data, the "
         f"most relevant customer attributes which are correlated to customer exit.")
 
     # inspect bank customer data
@@ -38,16 +38,17 @@ def page2_customer_exit_study_body():
     st.write(
         f"* We conducted a correlation study for better understanding of "
         f"the variables which are correlated to Customer Exit. \n"
-        f"Variables which were found to be most correlated are: **{imp_vars}**"
+        f"Variables which were found to be most correlated are: \n\n **{imp_vars}**"
     )
 
     #  Conclusions and Next steps based on customer exit study
     st.info(
+        f"* The average age of customers who is exited is 45 years and who didn't exit is 35 years. \n"
         f"* Customers having more than one product tend to exit less. \n"
         f"* Customers belonging to Germany tend to exit more than France and Spain. \n"       
         f"* An exited customer usually has credit score in the range of 600 to 675."
-        f"However customers who dont exit also tend to have slightly"
-        f"higher credit score in range of 625 to 700. \n"
+        f" However customers who dont exit tend to have slightly"
+        f" higher credit score in range of 625 to 700. \n"
         f"* Customers who exited didn't belong to any specific Salary range. \n"
         f"* Customers with lower account balance tend to exit less compared to customers with higher account balance. \n"
     )
