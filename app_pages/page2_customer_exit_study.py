@@ -43,14 +43,15 @@ def page2_customer_exit_study_body():
 
     #  Conclusions and Next steps based on customer exit study
     st.info(
-        f"* The average age of customers who is exited is 45 years and who didn't exit is 35 years. \n"
-        f"* Customers having more than one product tend to exit less. \n"
-        f"* Customers belonging to Germany tend to exit more than France and Spain. \n"       
-        f"* An exited customer usually has credit score in the range of 600 to 675."
-        f" However customers who dont exit tend to have slightly"
-        f" higher credit score in range of 625 to 700. \n"
-        f"* Customers who exited didn't belong to any specific Salary range. \n"
-        f"* Customers with lower account balance tend to exit less compared to customers with higher account balance. \n"
+        f"* The average age of customers who **exited is 45 years** and who **didn't exit is 35 years**. \n"
+        f"* Customers having **more than one product tend to exit less.** \n"
+        f"* Customers belonging to **Germany tend to exit more** than France and Spain. \n"       
+        f"* Customers who exited usually have credit scores in the range of 600 to 675."
+        f" However, customers who didn't exit tend to have slightly"
+        f" higher credit scores in the range of 625 to 700. \n"
+        f"* Customers who exited **didn't belong to any specific salary range.** \n"
+        f"* Customers with lower account balances tend to exit less compared \n"
+        f" to customers with higher account balances. \n"
     )
 
     # Exploratory Data Analysis (EDA) of most important variables
