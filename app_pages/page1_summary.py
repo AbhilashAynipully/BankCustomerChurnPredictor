@@ -13,8 +13,10 @@ def page1_summary_body():
         f"* A **customer** is an individual who uses banking services(bank account, credit card etc).\n"
         f"* An **exited customer** is a user who has stopped using banking services.\n"
         f"* A **credit score** talks about the credit worthiness of the individual.\n "
-        f"* This customer has a **tenure** level, the number of months this person " 
-        f"has used our product/service.\n\n"
+        f"* This customer has a **tenure** level, the number of years this person " 
+        f"has used our product/service.\n\n")
+
+    st.info(
         f"**Project Dataset**\n"
         f"* The dataset contains information on **bank customers** who either left or "
         f"continue to be a customer. There are details regarding:"
