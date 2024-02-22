@@ -36,14 +36,14 @@ def page2_customer_exit_study_body():
 
     # Correlation Study Summary
     st.write(
-        f"* We conducted a correlation study for better understanding of "
-        f"the variables which are correlated to Customer Exit. \n"
-        f"Variables which were found to be most correlated are: \n\n **{imp_vars}**"
+        f"* We conducted a correlation study for a better understanding of "
+        f"the variables that are correlated to Customer Exit. \n"
+        f"Variables that were found to be most correlated are: \n\n **{imp_vars}**"
     )
 
-    #  Conclusions and Next steps based on customer exit study
+    #  Conclusions based on customer exit study
     st.info(
-        f"* The average age of customers who **exited is 45 years** and who **didn't exit is 35 years**. \n"
+        f"* The average age of customers who **exited is 45 years** and those who **didn't exit is 35 years**. \n"
         f"* Customers having **more than one product tend to exit less.** \n"
         f"* Customers belonging to **Germany tend to exit more** than France and Spain. \n"       
         f"* Customers who exited usually have credit scores in the range of 600 to 675."
