@@ -21,6 +21,6 @@ def page3_hypothesis_body():
     )
     st.error(
         f"**3. The sales team believes that the customer's salary is the most important factor in deciding on exit.**\n\n"
-        f"The correlation study doesn't support that. As per study report, customer's salary has no major impact on exit. "
+        f"The correlation study doesn't support that. As per the study report, the customer's salary has no major impact on exit. "
         f"Based on this finding further discussions and investigations will be conducted with the sales team. \n\n"
     )
