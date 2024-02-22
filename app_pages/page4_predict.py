@@ -32,11 +32,12 @@ def page4_predict_body():
 
     st.write("### Exit Predictor Interface")
     st.info(
-        f"* The bank is interested in determining whether or newly onboarded customer will exit. "
-        f"If yes, the bank is interested in knowing if the customer will exit withinin a year."
+        f"* The bank is interested in determining whether a newly onboarded customer will exit. "
+        f"If yes, the bank is interested in knowing when will the customer exit."
     )
     st.write("---")
-
+    
+    st.write("Please enter details and click 'Run Analysis'")
     # Generate Live Data
     X_live = DrawInputsWidgets()
 
