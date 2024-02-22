@@ -181,7 +181,8 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
   - Train data - filter data where Exited == 1, then drop the Exited variable. Target: tenure; features: all other variables, but CustomerID, Surname, and RowNumber
 
 #### Model Performance
-![tenure-performance](documentation/tenure-performance.png)
+![tenure-performance-train](documentation/tenure-performance-train.png)
+![tenure-performance-test](documentation/tenure-performance-test.png)
 
 ---
 
