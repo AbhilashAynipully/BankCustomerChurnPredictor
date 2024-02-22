@@ -29,17 +29,17 @@ def page5_exit_ml_body():
     st.write("### ML Pipeline: Predict Customer Exit")
     # display pipeline summary
     st.info(
-        f"The pipeline was aimed at producing atleast **0.70 Recall on 'Will Exit' class**, "
-        f"as we are interested in identifying customers who would exit. Also "
-        f"the pipeline was expected to deliver **0.70 Precision on 'No Exit' class**. \n\n"
-        f"* The pipeline's **Recall performance** on 'Will Exit' class for "
+        f"The pipeline was aimed at producing at least **0.70 Recall on the 'Will Exit' class**, "
+        f"as we are interested in identifying customers who would exit. Also, "
+        f"the pipeline was expected to deliver **0.70 Precision on the 'No Exit' class**. \n\n"
+        f"* The pipeline's **Recall performance** on the 'Will Exit' class for the "
         f"**train and test set is 0.83 and 0.71**, respectively. \n\n"
-        f"* The pipeline's **Precision performance** on 'No Exit' class for "
+        f"* The pipeline's **Precision performance** on the 'No Exit' class for the "
         f"**train and test set is 0.80 and 0.89**, respectively. \n\n "
     )
     st.warning(
         f"The model was not refitted using the important features identified as the **Recall performance "
-        f"was 0.69** post refitting which **didn't meet the business requirement of 0.70**."
+        f"was 0.69** post-refitting which **didn't meet the business requirement of 0.70**."
     )
 
     # display pipelines
