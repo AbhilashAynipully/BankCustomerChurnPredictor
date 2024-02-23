@@ -1,4 +1,4 @@
-""" Predict Exit """
+""" Predict Exit ML """
 
 import streamlit as st
 import pandas as pd
@@ -53,7 +53,7 @@ def page5_exit_ml_body():
     st.write("* The second is for feature scaling and modelling.")
     st.write(exit_model)
 
-    # displayfeature importance plot
+    # display best features
     st.write("---")
     st.write("#### The important features identified")
     st.write("\n\n")

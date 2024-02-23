@@ -16,7 +16,7 @@ def page2_customer_exit_study_body():
     # load bank customer data
     df = load_bank_data()
 
-    # important variable to study as per ExitedCustomerDataAnalysis notebook
+    # important variables to study as per ExitedCustomerDataAnalysis notebook
     imp_vars = ['Age','Balance','CreditScore','EstimatedSalary','Gender','Geography','NumOfProducts']
 
     st.write("### Customer Exit Study")

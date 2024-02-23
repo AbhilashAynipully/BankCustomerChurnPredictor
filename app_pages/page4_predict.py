@@ -1,3 +1,5 @@
+""" Customer Exit and Tenure Predictor """
+
 import streamlit as st
 import pandas as pd
 from src.data_management import load_bank_data, load_pkl_file
@@ -56,17 +58,15 @@ def DrawInputsWidgets():
     # load dataset
     df = load_bank_data()
 
-# we create input widgets only for all 9 features
+# we create input widgets for all 9 features
     col1, col2, col3 = st.beta_columns(3)
     col4, col5, col6 = st.beta_columns(3)
     col7, col8, col9 = st.beta_columns(3)
-    # We are using these features to feed the ML pipeline - values copied from check_variables_for_UI() result
 
-    # create an empty DataFrame, which will be the live data
+    # Empty DataFrame to fill live data
     X_live = pd.DataFrame([], index=[0])
 
-    # from here on we draw the widget based on the variable type (numerical or categorical)
-    # and set initial values
+# Widgets for numerical and categorical variables with initial value and limits
     with col1:
         feature = "CreditScore"
         st_widget = st.number_input(

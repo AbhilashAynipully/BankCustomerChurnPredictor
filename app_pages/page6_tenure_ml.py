@@ -1,4 +1,4 @@
-""" Predict Tenure """
+""" Predict Tenure ML"""
 
 import streamlit as st
 import pandas as pd

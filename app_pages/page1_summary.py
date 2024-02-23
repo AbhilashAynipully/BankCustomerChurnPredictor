@@ -15,7 +15,8 @@ def page1_summary_body():
         f"* A **credit score** talks about the creditworthiness of the individual.\n "
         f"* This customer has a **tenure** level, the number of years this person " 
         f"has used our product/service.\n\n")
-
+    
+    # Project Dataset
     st.info(
         f"**Project Dataset**\n"
         f"* The dataset contains information on **bank customers** who either left or "
