@@ -33,17 +33,17 @@ def predict_tenure(X_live, tenure_features, tenure_model, tenure_labels_map):
     # from live data, subset features related to this pipeline
     X_live_tenure = X_live.filter(tenure_features)
 
-    # predict
+    # prediction
     tenure_prediction = tenure_model.predict(X_live_tenure)
     tenure_prediction_proba = tenure_model.predict_proba(X_live_tenure)
   
-    # create a logic to display the results
+    # display results based on prediction
     proba = tenure_prediction_proba[0, tenure_prediction][0]*100
     tenure_levels = tenure_labels_map[tenure_prediction[0]]
 
     if tenure_prediction == 0:
         statement = (
-            f"* We also expect that there is a {proba.round(2)}% probability that this customer"
+            f"* We also expect that there is a {proba.round(2)}% probability that this customer "
             f"will exit withinin a period of **{tenure_levels} year**. "
         )
     else:
