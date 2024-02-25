@@ -100,7 +100,7 @@ def plot_numerical(df, col, target_var):
     st.pyplot(fig) 
 
 
-
+# Variables Distribution
 def variable_distribution(df_imp):
 
     for col in df_imp.columns.to_list():
@@ -112,7 +112,7 @@ def variable_distribution(df_imp):
 def categorical_count(df,col):
     fig, axes = plt.subplots(figsize=(12,5))
     count = df.value_counts(col)
-    plt.pie(x=count, labels=count.index)
+    plt.pie(x=count, labels=count.index,autopct='%1.1f%%')
     plt.title(f"{col}", fontsize=12, y=1.05)
     st.pyplot(fig)
 
