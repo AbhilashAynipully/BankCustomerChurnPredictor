@@ -52,6 +52,7 @@ def page4_predict_body():
             predict_tenure(X_live, tenure_features,
                            tenure_model, tenure_labels_map)
 
+    st.write("---")
 
 def DrawInputsWidgets():
 
@@ -71,7 +72,7 @@ def DrawInputsWidgets():
         feature = "CreditScore"
         st_widget = st.number_input(
             label=feature,
-            min_value=300,
+            min_value=0,
             max_value=900,
             value=300
         )

@@ -41,8 +41,25 @@ def page2_customer_exit_study_body():
         f"Variables that were found to be most correlated are: \n\n **{imp_vars}**"
     )
 
+    # Variable distribution Analysis
+    df_imp = df.filter(imp_vars)
+
+    # Individual plots per variable
+    if st.checkbox("Variable Distribution"):
+        variable_distribution(df_imp)
+
+    # Exploratory Data Analysis (EDA) of most important variables
+    df_eda = df.filter(imp_vars + ['Exited'])
+
+    # Individual plots per variable
+    if st.checkbox("Exit Levels per Variable"):
+        variable_based_exit_level(df_eda)
+
+    st.write("---")
+
     #  Conclusions based on customer exit study
     st.info(
+        f"### Conclusions: \n"
         f"* The average age of customers who **exited is 45 years** and those who **didn't exit is 35 years**. \n"
         f"* Customers having **more than one product tend to exit less.** \n"
         f"* Customers belonging to **Germany tend to exit more** than France and Spain. \n"       
@@ -53,14 +70,8 @@ def page2_customer_exit_study_body():
         f"* Customers with lower account balances tend to exit less compared \n"
         f" to customers with higher account balances. \n"
     )
-
-    # Exploratory Data Analysis (EDA) of most important variables
-    df_eda = df.filter(imp_vars + ['Exited'])
-
-    # Individual plots per variable
-    if st.checkbox("Exit Levels per Variable"):
-        variable_based_exit_level(df_eda)
-
+    
+    st.write("---")
 
 # Variables Distribution basis customer exit
 def variable_based_exit_level(df_eda):
@@ -87,3 +98,28 @@ def plot_numerical(df, col, target_var):
     sns.histplot(data=df, x=col, hue=target_var, kde=True, element="step")
     plt.title(f"{col}", fontsize=20, y=1.05)
     st.pyplot(fig) 
+
+
+
+def variable_distribution(df_imp):
+
+    for col in df_imp.columns.to_list():
+        if df_imp[col].dtype == 'object':
+                categorical_count(df_imp, col)
+        else:
+            numerical_count(df_imp, col)
+
+def categorical_count(df,col):
+    fig, axes = plt.subplots(figsize=(12,5))
+    count = df.value_counts(col)
+    plt.pie(x=count, labels=count.index)
+    plt.title(f"{col}", fontsize=12, y=1.05)
+    st.pyplot(fig)
+
+def numerical_count(df,col):
+    fig, axes = plt.subplots(figsize=(12, 5))
+    plt.hist(df[col])
+    plt.ylabel('Customers')
+    plt.xlabel(col)
+    plt.title(f"{col}", fontsize=15, y=1.05)
+    st.pyplot(fig)   
