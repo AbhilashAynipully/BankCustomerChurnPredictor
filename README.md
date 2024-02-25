@@ -34,7 +34,7 @@ The projects aims at creating a predictive model which would aid the bank(client
   - [Page 6: ML Analysis Tenure](#page-6-ml-analysis-tenure)
 - [Project Management](#project-management)
 - [Future Features](#future-features)
-- [Manual Testing and Unfixed Bugs](#manual-testing-and-unfixed-bugs)
+- [Testing and Bugs](#testing-and-bugs)
 - [Technologies](#technologies)
   - [Main Development Environments and Editors](#main-development-environments-and-editors)
   - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
@@ -225,7 +225,7 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 
 - States business requirement 2
 - Set of inputs relates to customer attributes. Inputs are required for given ML task to predict customer exit and tenure.
-- On pressing the "Predict Exit" button customer data is fed into our ML pipelines, and the pipeline will predict if the customer will exit or not. It also predicts when the customer is expected to exit by showing the tenure.
+- On pressing the "Run Analysis" button customer data is fed into our ML pipelines, and the pipeline will predict if the customer will exit or not. It also predicts when the customer is expected to exit by showing the tenure.
 
 ![page4](documentation/page4.png)
 
@@ -278,15 +278,72 @@ Link : [Project Board](https://github.com/users/AbhilashAynipully/projects/4)
 
 ---
 
-## Manual Testing and Unfixed Bugs
+## Testing and Bugs
 
 ### Manual Testing
 
+#### Application
+
 - The deployed app link is working properly.
 - The web app is loading across devices without any issues.
-- All the pages of the app are functioning properly and displaying content as per design.
-- Predict page is functioning properly and predicting results based on entered data.  
 
+#### Page 1: Quick project summary
+
+- When the App loads this page is displayed by default.
+- The Quick Project Summary is displayed in blue color with both sections : Project Terms & Jargon and Project Dataset.
+- The link for the Readme file is present and redirects to the project readme page when clicked.
+- Both business requirements are present and displayed in green color.
+
+#### Page 2 : Customer Exit Study
+
+- On clicking the 'Customer Exit Study' button in the menu bar the user is redirected to the Customer Exit Study page.
+- All the sections and content are being loaded and displayed.
+- On clicking 'Inspect Customer Base' the top ten rows are being displayed from the database.
+- The most correlated variables are displayed in bold.
+- The conclusions from the correlation study are displayed in blue color.
+- On clicking exit levels per variable plots display each variable against exit is being displayed.
+
+#### Page 3 : Project Hypothesis and Validation
+
+- On clicking the 'Project Hypothesis and Validation' button in the menu bar the user is redirected to the Project Hypothesis and Validation page.
+- All the 3 hypotheses are being displayed.
+- The hypothesis that turned out true is being displayed in green.
+- The incorrect hypotheses appear in red.
+- The details of the study and further actions are displayed under each respective hypothesis. 
+
+#### Page 4 : Customer Exit and Tenure Predictor
+
+- On clicking the 'Exit Predictor' button in the menu bar the user is redirected to the Customer Exit and Tenure Predictor page.
+- The business requirement is displayed on top.
+- The input fields are being displayed along with default values.
+- The input sections display and accept assigned options and value ranges.
+- On clicking the 'Run Analysis' button the model displays results based on entered data.
+
+#### Page 5 : ML Analysis Customer Exit
+
+- On clicking the 'ML Customer Exit' button in the menu bar the user is redirected to the ML Analysis Customer Exit page.
+- The model summary is displayed in a blue color section with all performance parameters considered.
+- The shortcomings of the model are displayed in the yellow color section.
+- Both ML pipelines used are being displayed 
+- Feature importance plot with the most important variables is being displayed.
+- Pipeline performance for both 'Train' and 'Test' data is being displayed.
+
+#### Page 6 : ML Analysis Tenure
+
+- On clicking the 'ML Customer Tenure' button in the menu bar the user is redirected to the ML Analysis Customer Tenure page.
+- The model summary is displayed in a blue color section with all performance parameters considered.
+- The shortcomings of the model are displayed in the yellow color section.
+- ML pipelines designed to predict tenure are being displayed. 
+- Feature importance plot with the most important variables is being displayed.
+- Pipeline performance for both 'Train' and 'Test' data is being displayed.
+
+### Bugs
+
+#### Fixed Bugs
+
+- There was an issue with deployment, Heroku Stack-22 doesn't support requested runtime 'python-3.8.17' and hence the Heroku Stack was set to Stack-20.
+
+- The dataset, model, and plots were not getting uploaded on the dashboard post-deployment. After troubleshooting it was found that the output folder was accidentally added to the gitignore file along with input folder.
 ### Unfixed Bugs
 
 - No unfixed bugs remain
