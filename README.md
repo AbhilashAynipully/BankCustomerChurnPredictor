@@ -179,7 +179,7 @@ We chose top 2 ML Algorithms basis Cross Validation Search (GridSearchCV) and di
    c) *max_depth* : used to control maximum depth of a tree.
       Values used : [3,5,8]
 
-   d) *min_samlpes_split* : number of observations which are required in a node to be considered for splitting.
+   d) *min_samples_split* : number of observations which are required in a node to be considered for splitting.
       Values used : [2,25,40]
 
    e) *min_samples_leaf* : minimum observations required in a terminal node or leaf.
