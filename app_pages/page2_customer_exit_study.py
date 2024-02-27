@@ -1,6 +1,5 @@
 """ Customer Exit Study """
 
-import plotly.express as px
 import numpy as np
 from feature_engine.discretisation import ArbitraryDiscretiser
 import streamlit as st
@@ -8,6 +7,7 @@ from src.data_management import load_bank_data
 
 import matplotlib.pyplot as plt
 import seaborn as sns
+import ppscore as pps
 sns.set_style("whitegrid")
 
 
@@ -54,6 +54,11 @@ def page2_customer_exit_study_body():
     # Individual plots per variable
     if st.checkbox("Exit Levels per Variable"):
         variable_based_exit_level(df_eda)
+    
+    # Correlation and PPS Analysis
+    if st.checkbox("Correlation and PPS Analysis"):
+        cor(df)
+
 
     st.write("---")
 
@@ -123,3 +128,84 @@ def numerical_count(df,col):
     plt.xlabel(col)
     plt.title(f"{col}", fontsize=15, y=1.05)
     st.pyplot(fig)   
+
+
+# Correlation and PPS Analysis
+def cor(df):
+    state = '(Please wait...)'
+    st.write("---")
+    st.write('**Generating PPS score and Heatmaps:** *(Please wait...)*')
+    st.write("---")
+
+    def heatmap_corr(df, threshold, figsize=(20, 12), font_annot=8):
+        if len(df.columns) > 1:
+            mask = np.zeros_like(df, dtype=np.bool)
+            mask[np.triu_indices_from(mask)] = True
+            mask[abs(df) < threshold] = True
+
+            fig, axes = plt.subplots(figsize=figsize)
+            sns.heatmap(df, annot=True, xticklabels=True, yticklabels=True,
+                        mask=mask, cmap='viridis', annot_kws={"size": font_annot}, ax=axes,
+                        linewidth=0.5
+                        )
+            axes.set_yticklabels(df.columns, rotation=0)
+            plt.ylim(len(df.columns), 0)
+            st.pyplot(fig)
+
+
+    def heatmap_pps(df, threshold, figsize=(20, 12), font_annot=8):
+        if len(df.columns) > 1:
+            mask = np.zeros_like(df, dtype=np.bool)
+            mask[abs(df) < threshold] = True
+            fig, ax = plt.subplots(figsize=figsize)
+            ax = sns.heatmap(df, annot=True, xticklabels=True, yticklabels=True,
+                            mask=mask, cmap='rocket_r', annot_kws={"size": font_annot},
+                            linewidth=0.05, linecolor='grey')
+            plt.ylim(len(df.columns), 0)
+            st.pyplot(fig)
+
+
+    def CalculateCorrAndPPS(df):
+        df_corr_spearman = df.corr(method="spearman")
+        df_corr_pearson = df.corr(method="pearson")
+
+        pps_matrix_raw = pps.matrix(df)
+        pps_matrix = pps_matrix_raw.filter(['x', 'y', 'ppscore']).pivot(columns='x', index='y', values='ppscore')
+
+        pps_score_stats = pps_matrix_raw.query("ppscore < 1").filter(['ppscore']).describe().T
+        st.write("PPS Score: \n")
+        st.write(pps_score_stats.round(3))
+
+        return df_corr_pearson, df_corr_spearman, pps_matrix
+
+
+    def DisplayCorrAndPPS(df_corr_pearson, df_corr_spearman, pps_matrix, CorrThreshold, PPS_Threshold,
+                        figsize=(20, 12), font_annot=8):
+
+        st.write("\n")
+        st.write("* Analyse how the target variable is correlated with other variables (features and target)")
+        st.write("* Analyse multi-colinearity, that is, how the features are correlated among themselves")
+
+        st.write("\n")
+        st.write("*** Heatmap: Spearman Correlation (monotonic relationship) ***")
+        heatmap_corr(df=df_corr_spearman, threshold=CorrThreshold, figsize=figsize, font_annot=font_annot)
+
+        st.write("\n")
+        st.write("*** Heatmap: Pearson Correlation (linear relationship between two continuous variables) ***")
+        heatmap_corr(df=df_corr_pearson, threshold=CorrThreshold, figsize=figsize, font_annot=font_annot)
+
+        st.write("\n")
+        st.write("*** Heatmap: Power Predictive Score (PPS) ***")
+        st.write("Linear or non-linear relationships between two columns")
+        st.write("The score ranges from 0 (no predictive power) to 1 (perfect predictive power)")
+        heatmap_pps(df=pps_matrix, threshold=PPS_Threshold, figsize=figsize, font_annot=font_annot)
+
+    df_corr_pearson, df_corr_spearman, pps_matrix = CalculateCorrAndPPS(df)
+
+    DisplayCorrAndPPS(df_corr_pearson = df_corr_pearson,
+                    df_corr_spearman = df_corr_spearman, 
+                    pps_matrix = pps_matrix,
+                    CorrThreshold = 0.3, PPS_Threshold =0.01,
+                    figsize=(12,10), font_annot=10)
+
+
