@@ -11,7 +11,7 @@ def page3_hypothesis_body():
     st.success(
         f"**1. The management team believes: 'if customers use only one product, then they tend to exit more.'**\n\n" 
         f"- The correlation study supports that. As per the study report, "
-        f"customers using one product tend to exit more. \n\n"
+        f"customers using only one product tend to exit more. \n\n"
     )
 
     st.error(
