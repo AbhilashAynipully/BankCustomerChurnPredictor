@@ -146,7 +146,13 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 - The training data to fit the model is provided by the bank. This dataset contains about 10 thousand customer records.
   - Train data - target: Exited; features: all other variables, but CustomerID, Tenure, Surname, and RowNumber.
 
-#### Model Performance
+##### Hyperparameter Optimisation
+
+1. Adaboost Classsifier
+
+2. Gradient Boost Classifier
+
+#### Model Performance Report
 ![exit-performance](documentation/exit-performance.png)
 
 ### **Predict Tenure**
@@ -180,7 +186,7 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 - The training data to fit the model is provided by the bank. This dataset contains about 10 thousand customer records.
   - Train data - filter data where Exited == 1, then drop the Exited variable. Target: tenure; features: all other variables, but CustomerID, Surname, and RowNumber
 
-#### Model Performance
+#### Model Performance Report
 ![tenure-performance-train](documentation/tenure-performance-train.png)
 ![tenure-performance-test](documentation/tenure-performance-test.png)
 
@@ -203,6 +209,8 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 - A checkbox : for displaying the number of rows and columns in the data and displaying the first ten rows of data
 - Display the most correlated variables to Exit and conclusions
 - A checkbox : for displaying the individual plots showing the customer exit levels for each correlated variable
+- A checkbox : for displaying the individual variable distribution
+- A checkbox : for displaying the correlation and PPS analysis of variables
 
 ![page2](documentation/page2.png)
 
@@ -300,8 +308,10 @@ Link : [Project Board](https://github.com/users/AbhilashAynipully/projects/4)
 - All the sections and content are being loaded and displayed.
 - On clicking 'Inspect Customer Base' the top ten rows are being displayed from the database.
 - The most correlated variables are displayed in bold.
+- On clicking 'Variable Distribution', plots are being displayed. 
+- On clicking 'Exit Levels per Variable', plots are being displayed.
+- On clicking 'Correlation and PPS Analysis', plots are being displayed.
 - The conclusions from the correlation study are displayed in blue color.
-- On clicking exit levels per variable plots display each variable against exit is being displayed.
 
 #### Page 3 : Project Hypothesis and Validation
 
@@ -336,6 +346,7 @@ Link : [Project Board](https://github.com/users/AbhilashAynipully/projects/4)
 - ML pipelines designed to predict tenure are being displayed. 
 - Feature importance plot with the most important variables is being displayed.
 - Pipeline performance for both 'Train' and 'Test' data is being displayed.
+
 
 ### Bugs
 
