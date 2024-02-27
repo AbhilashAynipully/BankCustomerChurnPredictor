@@ -100,13 +100,13 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 
 ## Hypothesis and how to validate?
 
-1. The management team believes, customers who use only one product tend to exit.
+1. The management team believes: "if customers use only one product then they tend to exit more."
    - A study of correlation between NumOfProducts(variable) and Exited(target) can help us identify this 
 
-1. As per the customer service team, the customer's account balance has no impact on exit.
+1. According to customer service team: "if customer's account balance is high, then they tend to exit less."
    - A correlation study between account balances and Exited can help us confirm this
 
-1. The sales team believes that the customer's salary is the most important factor in deciding exit.
+1. The sales team believes: "if customer's salary is low, then they tend to exit more."
    - A correlation study between all customer attributes and Exited can confirm this
 
 ---
@@ -274,12 +274,12 @@ We chose Adaboost Classfier basis Cross Validation Search (GridSearchCV) and did
 - Before analysis, this page described all project hypotheses, the conclusions, and how to validate each hypothesis.
 - Based on the analysis we can confirm below:
 
-  1. The management team believes, customers who use only one product tend to exit.
-     - correct
-  1. As per the customer service team, the customer's account balance has no impact on exit.
-     - incorrect
-  1. The sales team believes that the customer's salary is the most important factor in deciding exit.
-     - incorrect
+  1. The management team believes: "if customers use only one product, then they tend to exit more."
+     - Correct
+  1. According to customer service team: "if customer's account balance is high, then they tend to exit less."
+     - Incorrect
+  1. The sales team believes: "if customer's salary is low, then they tend to exit more."
+     - Incorrect
 
 ![page3](documentation/page3.png)
 

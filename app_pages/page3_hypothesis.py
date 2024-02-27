@@ -9,18 +9,18 @@ def page3_hypothesis_body():
 
     # Conclusions are based on customer exit Study notebook
     st.success(
-        f"**1. The management team believes, customers who use only one product tend to exit.**\n\n" 
-        f"The correlation study at Customer Exit Study supports that. As per the study report, "
-        f"customers with more than one product tend to exit less. \n\n"
+        f"**1. The management team believes: 'if customers use only one product, then they tend to exit more.'**\n\n" 
+        f"- The correlation study supports that. As per the study report, "
+        f"customers using one product tend to exit more. \n\n"
     )
 
     st.error(
-        f"**2. As per the customer service team, the customer's account balance has no impact on exit.** \n\n"
-        f"The correlation study doesn't support that. As per the study report, customers with lower salaries tend to exit less. "
-        f"Basis this finding further discussions and investigations will be conducted with the customer service team. \n\n"
+        f"**2. According to customer service team: 'if customer's account balance is high, then they tend to exit less.'** \n\n"
+        f"- The correlation study doesn't support that. As per the study report, customers with higher account balances tend to exit more. "
+        f"Based on this, discussions and planning will be done with the customer service team. \n\n"
     )
     st.error(
-        f"**3. The sales team believes that the customer's salary is the most important factor in deciding on exit.**\n\n"
-        f"The correlation study doesn't support that. As per the study report, the customer's salary has no major impact on exit. "
-        f"Based on this finding further discussions and investigations will be conducted with the sales team. \n\n"
+        f"**3. The sales team believes: 'if customer's salary is low, then they tend to exit more.'**\n\n"
+        f"- The correlation study doesn't support that. As per the study report, the customer's salary has no major influence on exit. "
+        f"Based on this, discussions and planning will be done with the sales team. \n\n"
     )
