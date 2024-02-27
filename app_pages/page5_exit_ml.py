@@ -38,7 +38,8 @@ def page5_exit_ml_body():
         f"**train and test set is 0.80 and 0.89**, respectively. \n\n "
     )
     st.warning(
-        f"The model was not refitted using the important features identified as the **Recall performance "
+        f"Due to the nature and limitations of available dataset, the model was " 
+        f"not refitted using the important features identified as the **Recall performance "
         f"was 0.69** post-refitting which **didn't meet the business requirement of 0.70**."
     )
 

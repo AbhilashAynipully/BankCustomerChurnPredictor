@@ -134,7 +134,8 @@ def numerical_count(df,col):
 def cor(df):
     state = '(Please wait...)'
     st.write("---")
-    st.write('**Generating PPS score and Heatmaps:** *(Please wait...)*')
+    st.write('**Generating PPS score and Heatmaps:**')
+    st.write('*please wait, this may take a few seconds...*')
     st.write("---")
 
     def heatmap_corr(df, threshold, figsize=(20, 12), font_annot=8):
