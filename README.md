@@ -146,11 +146,49 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 - The training data to fit the model is provided by the bank. This dataset contains about 10 thousand customer records.
   - Train data - target: Exited; features: all other variables, but CustomerID, Tenure, Surname, and RowNumber.
 
-##### Hyperparameter Optimisation
+**Hyperparameter Optimisation**
 
-1. Adaboost Classsifier
+We chose top 2 ML Algorithms basis Cross Validation Search (GridSearchCV) and did a hyperparameter optimisation for both. Intention was to conduct a detailed hyperparameter testing however due to shortage of time and resource it couldn't be done.
 
-2. Gradient Boost Classifier
+1. **Adaboost Classsifier**
+  
+   Below hyperparameters and values were chosen.
+
+   a) *n_estimators* : the number of base estimators used.
+      Values used : [5,10,15,20]
+  
+   b) *learining_rate* : control contribution of each classifier.
+      Values used : [0.1,0.5,1]
+   
+   c) *algorithm* : SAMME.R uses the probability estimates to update the additive model, while SAMME uses the classifications only.
+      Values used : ['SAMME','SAMME.R']
+   
+   d) *random_state* = 0 
+
+
+2. **Gradient Boost Classifier**
+ 
+   Below hyperparameters and values were chosen.
+
+   a) *n_estimators* : the number of base estimators used.
+      Values used : [10,20,30]
+  
+   b) *learining_rate* : control contribution of each classifier.
+      Values used : [0.1,0.5,1]
+   
+   c) *max_depth* : used to control maximum depth of a tree.
+      Values used : [3,5,8]
+
+   d) *min_samlpes_split* : number of observations which are required in a node to be considered for splitting.
+      Values used : [2,25,40]
+
+   e) *min_samples_leaf* : minimum observations required in a terminal node or leaf.
+      Values used : [1,50,100]
+
+   f) *max_leaf_nodes* : maximum number of terminal nodes or leaves in a tree.
+      Values used : [None,25,40]
+
+   g) *random_state* = 0
 
 #### Model Performance Report
 ![exit-performance](documentation/exit-performance.png)
@@ -185,6 +223,22 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 - Heuristics: Currently, there is no approach to predict the tenure levels for a prospect.
 - The training data to fit the model is provided by the bank. This dataset contains about 10 thousand customer records.
   - Train data - filter data where Exited == 1, then drop the Exited variable. Target: tenure; features: all other variables, but CustomerID, Surname, and RowNumber
+
+**Hyperparameter Optimisation**
+
+We chose Adaboost Classfier basis Cross Validation Search (GridSearchCV) and did a hyperparameter optimisation. Intention was to conduct a detailed hyperparameter testing however due to shortage of time and resource it couldn't be done.
+
+**Adaboost Classsifier**
+  
+   Below hyperparameters and values were chosen.
+
+   a) *n_estimators* : the number of base estimators used.
+      Values used : [50,100,300]
+  
+   b) *learining_rate* : control contribution of each classifier.
+      Values used : [1e-1,1e-2,1e-3]
+   
+   c) *random_state* = 0 
 
 #### Model Performance Report
 ![tenure-performance-train](documentation/tenure-performance-train.png)
