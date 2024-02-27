@@ -338,6 +338,8 @@ Link : [Project Board](https://github.com/users/AbhilashAynipully/projects/4)
 
 - Add a section that talks about the ideal products which can be pitched to customers based on their profile, this would help in retaining the customer.
 
+- Conduct a detailed hyperparameter optimisation to check if model performance can be enhanced further.
+
 ---
 
 ## Testing and Bugs
