@@ -148,7 +148,7 @@ As a Data Analyst at Best Bank (a multinational bank), you have been requested t
 
 **Hyperparameter Optimisation**
 
-We chose top 2 ML Algorithms basis Cross Validation Search (GridSearchCV) and did a hyperparameter optimisation for both. Intention was to conduct a detailed hyperparameter testing however due to shortage of time and resource it couldn't be done.
+We chose top 2 ML Algorithms basis Cross Validation Search (GridSearchCV) and did a hyperparameter optimisation for both. My intention was to conduct a detailed hyperparameter testing. However due to shortage of time and resources, it is not done.
 
 1. **Adaboost Classsifier**
   
@@ -190,6 +190,10 @@ We chose top 2 ML Algorithms basis Cross Validation Search (GridSearchCV) and di
 
    g) *random_state* = 0
 
+Based on the performance scores Adaboost Classifier was selected with below hyperparameter values.
+
+**AdaBoostClassifier(algorithm='SAMME', learning_rate=0.5, n_estimators=10, random_state=0)**
+
 #### Model Performance Report
 ![exit-performance](documentation/exit-performance.png)
 
@@ -226,7 +230,7 @@ We chose top 2 ML Algorithms basis Cross Validation Search (GridSearchCV) and di
 
 **Hyperparameter Optimisation**
 
-We chose Adaboost Classfier basis Cross Validation Search (GridSearchCV) and did a hyperparameter optimisation. Intention was to conduct a detailed hyperparameter testing however due to shortage of time and resource it couldn't be done.
+We chose Adaboost Classfier basis Cross Validation Search (GridSearchCV) and did a hyperparameter optimisation. My intention was to conduct a detailed hyperparameter testing. However due to shortage of time and resources, it is not done.
 
 **Adaboost Classsifier**
   
@@ -239,6 +243,10 @@ We chose Adaboost Classfier basis Cross Validation Search (GridSearchCV) and did
       Values used : [1e-1,1e-2,1e-3]
    
    c) *random_state* = 0 
+
+Based on the performance scores Adaboost Classifier was selected with below hyperparameter values.
+
+**AdaBoostClassifier(learning_rate=0.01, n_estimators=10, random_state=0)**
 
 #### Model Performance Report
 ![tenure-performance-train](documentation/tenure-performance-train.png)
@@ -316,17 +324,17 @@ We chose Adaboost Classfier basis Cross Validation Search (GridSearchCV) and did
 This project was developed using agile principles on GitHub. All functions and features were broken down into Issues(User Stories). Depending on their nature Issues were grouped under Milestones (Epics). Each Issue had its acceptance criteria and assigned tasks. Depending on type of requirement, each Issue was given a Label. The entire development was monitored using a Kanban board available under Projects on GitHub.
 
 ### EPICS (Milestones)
-The project was divided into 6 Milestones (Epics). All Issues moved to their respective Millestones.
+The project consists of 6 Milestones (Epics). All Issues were moved to their respective Milestones.
 
 Link : [Milestones](https://github.com/AbhilashAynipully/BankCustomerExitPredictor/milestones)
 
 ### User Stories (Issues)
-Issues were comprised of User Story and its Acceptance criteria along with relevant Tasks. 
+Issues comprise of User Story, Acceptance criteria, and relevant Tasks. 
 
 Link : [User Stories](https://github.com/AbhilashAynipully/BankCustomerExitPredictor/issues?q=is%3Aissue+is%3Aclosed)
 
 ### GitHub Projects
-GitHub Projects was used to keep track of workflow. This was done with the help of a basic Kanban board which divided the Issues into three different stages of development which were Todo, Doing and Done.
+GitHub Projects is used to keep track of workflow. This was done with the help of a basic Kanban board which divided the Issues into three different stages of development which were Todo, Doing and Done.
 
 Link : [Project Board](https://github.com/users/AbhilashAynipully/projects/4)
 
@@ -338,7 +346,7 @@ Link : [Project Board](https://github.com/users/AbhilashAynipully/projects/4)
 
 - Add a section that talks about the ideal products which can be pitched to customers based on their profile, this would help in retaining the customer.
 
-- Conduct a detailed hyperparameter optimisation to check if model performance can be enhanced further.
+- Conduct a detailed hyperparameter optimisation to check if the model's performance could be enhanced.
 
 ---
 
@@ -503,4 +511,4 @@ Link : [Project Board](https://github.com/users/AbhilashAynipully/projects/4)
 
 ### Conclusion
 
-Finally, I am grateful to Code Institute for providing me with an opportunity to build this project. This project helped in understanding various concepts of Data Analytics and ML modeling. I was able to test my knowledge and understanding of different aspects learned in the last few months of the course. During the entire development process, I was able to develop a deeper level of understanding of business case led model development. In future, I hope to develop my skills further by taking up other challenging projects.
+Finally, I am grateful to Code Institute for the opportunity to build this project. This project helped in understanding various concepts of Data Analytics and ML modeling. I could test my knowledge and understanding of different aspects learned in the last few months of the course. During the development process, I could develop a deep understanding of business case led model development. In future, I hope to develop my skills further by taking up other challenging projects.
